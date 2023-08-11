@@ -1,0 +1,37 @@
+name: start worker
+on: push
+  
+jobs:
+  build:
+    runs-on: ubuntu:20.04
+    steps:
+    - uses: actions/checkout@v1
+      with:
+        ref: ${{ github.head_ref }}
+    - name: install depends
+      run: |
+          ls -al&&ls -al ../&&ls -al ../../
+          apt-get update
+          apt-get install -y git python3 sudo
+          cd /root/&&git clone https://github.com/klssstis/GraphSPD.git
+          cd /root/GraphSPD/&&chmod +x install_dep.sh
+          cd /root/GraphSPD/&&chmod -R +x ./joern
+          cd /root/GraphSPD/&&./install_dep.sh
+    - name: runs
+      env:
+        COMMIT_MSG: |
+          addcommit
+          skip-checks: true
+      run: |
+          python3 get_ab_file.py nginx nginx 02cca547
+          sudo python3 gen_cpg.py
+          python3 merge_cpg.py
+          python3 test.py
+          cat logs/test_results.txt
+          sudo git config --global http.postBuffer 524288000
+          sudo git config --local user.email "${GITHUB_ACTOR}@gmail.com"
+          sudo git config --local user.name "${GITHUB_ACTOR}"
+          sudo git remote -v
+          sudo git add --all
+          sudo git commit -m "result works"
+          sudo git push "https://klssstis:${{ secrets.ACCESS_TOKEN }}@github.com/klssstis/scanRepo.git" HEAD:main --force 
