@@ -24,10 +24,13 @@ with open('repoList','r') as flist:
         g = Github(auth=auth)
         repo = g.get_repo(userName+"/"+repoName)
 
-        since = datetime.datetime.now() - datetime.timedelta(days=100)
+        since = datetime.datetime.now() - datetime.timedelta(days=1)
         commits = repo.get_commits(since=since)
 
         index = 1
+        os.system('rm -rf '+aiFolder+'ab_file/')
+        os.system('rm -rf '+aiFolder+'repo/')
+        os.system('rm -rf '+aiFolder+'testdata/')
         os.system('rm -rf '+aiFolder+'raw_patch/*')
         os.system('rm -rf '+aiFolder+'logs/test_results.txt')
         for i in commits:
@@ -40,7 +43,7 @@ with open('repoList','r') as flist:
         os.system('cd '+aiFolder+'&&python3 merge_cpg.py')
         os.system('cd '+aiFolder+'&&python3 test.py')
 
-        os.system('cp '+aiFolder+'logs/test_results.txt'+' ./'+datetime.date.today().strftime("%d%m%Y")+'_'+userName+'_'+repoName)
+        os.system('cp '+aiFolder+'logs/test_results.txt'+' ./result/'+datetime.date.today().strftime("%d%m%Y")+'_'+userName+'_'+repoName)
         with open(aiFolder+'logs/test_results.txt','r') as file:
             for i in file.readlines():
                 if i.splitlines()[0].endswith(',1'):
