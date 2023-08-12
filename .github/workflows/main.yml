@@ -10,24 +10,23 @@ jobs:
         ref: ${{ github.head_ref }}
     - name: install depends
       run: |
-          ls -al&&ls -al ../&&ls -al ../../&&ls -al ../../../&&ls -al /home/runner/
+          ls -al
+          ls -al /home/runner/work/&&ls -al /home/runner/runners
           sudo apt-get update
           sudo apt-get install -y git python3 sudo
-          cd /home/runner/&&git clone https://github.com/klssstis/GraphSPD.git
-          cd /home/runner/GraphSPD/&&chmod +x install_dep.sh
-          cd /home/runner/GraphSPD/&&chmod -R +x ./joern
-          cd /home/runner/GraphSPD/&&./install_dep.sh
+          cd /home/runner/work&&git clone https://github.com/klssstis/GraphSPD.git
+          ls -al
+          chmod +x /home/runner/GraphSPD/install_dep.sh
+          chmod -R +x /home/runner/GraphSPD/joern
+          /home/runner/GraphSPD/install_dep.sh
+          pip3 install PyGithub
     - name: runs
       env:
         COMMIT_MSG: |
           addcommit
           skip-checks: true
       run: |
-          python3 get_ab_file.py nginx nginx 02cca547
-          sudo python3 gen_cpg.py
-          python3 merge_cpg.py
-          python3 test.py
-          cat logs/test_results.txt
+          cd /home/runner/work/scanRepo/scanRepo/&&python3 worker1.py
           sudo git config --global http.postBuffer 524288000
           sudo git config --local user.email "${GITHUB_ACTOR}@gmail.com"
           sudo git config --local user.name "${GITHUB_ACTOR}"
