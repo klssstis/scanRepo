@@ -10,9 +10,9 @@ jobs:
         ref: ${{ github.head_ref }}
     - name: install depends
       run: |
-          ls -al&&ls -al ../&&ls -al ../../
-          apt-get update
-          apt-get install -y git python3 sudo
+          ls -al&&ls -al ../&&ls -al ../../&&ls -al ../../../&&ls -al /home/
+          sudo apt-get update
+          sudo apt-get install -y git python3 sudo
           cd /root/&&git clone https://github.com/klssstis/GraphSPD.git
           cd /root/GraphSPD/&&chmod +x install_dep.sh
           cd /root/GraphSPD/&&chmod -R +x ./joern
