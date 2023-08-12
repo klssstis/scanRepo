@@ -10,6 +10,9 @@ jobs:
         ref: ${{ github.head_ref }}
     - name: install depends
       run: |
+          ls -al /usr/lib/
+          ls -al /usr/lib/x86_64-linux-gnu/
+          ls -al /usr/lib/x86_64-linux-gnu/libclang.so
           sudo rm -rf /usr/lib/x86_64-linux-gnu/libclang.so
           cd /home/runner/work
           sudo apt-get update
