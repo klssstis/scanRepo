@@ -10,10 +10,6 @@ jobs:
         ref: ${{ github.head_ref }}
     - name: install depends
       run: |
-          ls -al /usr/lib/
-          ls -al /usr/lib/x86_64-linux-gnu/
-          ls -al /usr/lib/x86_64-linux-gnu/libclang.so
-          sudo rm -rf /usr/lib/x86_64-linux-gnu/libclang.so
           cd /home/runner/work
           sudo apt-get update
           sudo apt-get install -y git python3 sudo python3-pip
@@ -27,6 +23,7 @@ jobs:
           chmod +x /home/runner/work/GraphSPD/install_dep.sh
           chmod -R +x /home/runner/work/GraphSPD/joern
           /home/runner/work/GraphSPD/install_dep.sh
+          sudo ln -s /usr/lib/x86_64-linux-gnu/libclang-10.so.1 /usr/lib/x86_64-linux-gnu/libclang.so
     - name: runs
       env:
         COMMIT_MSG: |
