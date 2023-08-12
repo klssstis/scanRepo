@@ -19,6 +19,7 @@ jobs:
           chmod -R +x /home/runner/work/GraphSPD/joern
           /home/runner/work/GraphSPD/install_dep.sh
           pip3 install PyGithub
+          pip3 install requests
     - name: runs
       env:
         COMMIT_MSG: |
