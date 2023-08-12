@@ -12,14 +12,17 @@ jobs:
       run: |
           cd /home/runner/work
           sudo apt-get update
-          sudo apt-get install -y git python3 sudo
+          sudo apt-get install -y git python3 sudo python3-pip
+          sudo rm -rf /usr/lib/python3/dist-packages/OpenSSL
+          sudo pip3 install pyopenssl
+          sudo pip3 install pyopenssl --upgrade
+          sudo pip3 install PyGithub
+          sudo pip3 install requests
           git clone https://github.com/klssstis/GraphSPD.git
           ls -al
           chmod +x /home/runner/work/GraphSPD/install_dep.sh
           chmod -R +x /home/runner/work/GraphSPD/joern
           /home/runner/work/GraphSPD/install_dep.sh
-          pip3 install PyGithub
-          pip3 install requests
     - name: runs
       env:
         COMMIT_MSG: |
