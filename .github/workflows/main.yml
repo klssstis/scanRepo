@@ -17,7 +17,7 @@ jobs:
           ls -al
           chmod +x /home/runner/work/GraphSPD/install_dep.sh
           chmod -R +x /home/runner/work/GraphSPD/joern
-          /home/runner/GraphSPD/work/install_dep.sh
+          /home/runner/work/GraphSPD/install_dep.sh
           pip3 install PyGithub
     - name: runs
       env:
@@ -25,7 +25,7 @@ jobs:
           addcommit
           skip-checks: true
       run: |
-          cd /home/runner/work/scanRepo/scanRepo/&&python3 worker1.py
+          cd /home/runner/work/scanRepo/scanRepo/&&python3 worker1.py ${{ secrets.ACCESS_TOKEN }} ${{ secrets.BOT_TK }} ${{ secrets.CHAT_ID }}
           sudo git config --global http.postBuffer 524288000
           sudo git config --local user.email "${GITHUB_ACTOR}@gmail.com"
           sudo git config --local user.name "${GITHUB_ACTOR}"
