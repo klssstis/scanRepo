@@ -10,15 +10,14 @@ jobs:
         ref: ${{ github.head_ref }}
     - name: install depends
       run: |
-          ls -al
-          ls -al /home/runner/work/&&ls -al /home/runner/runners
+          cd /home/runner/work
           sudo apt-get update
           sudo apt-get install -y git python3 sudo
-          cd /home/runner/work&&git clone https://github.com/klssstis/GraphSPD.git
+          git clone https://github.com/klssstis/GraphSPD.git
           ls -al
-          chmod +x /home/runner/GraphSPD/install_dep.sh
-          chmod -R +x /home/runner/GraphSPD/joern
-          /home/runner/GraphSPD/install_dep.sh
+          chmod +x /home/runner/work/GraphSPD/install_dep.sh
+          chmod -R +x /home/runner/work/GraphSPD/joern
+          /home/runner/GraphSPD/work/install_dep.sh
           pip3 install PyGithub
     - name: runs
       env:
