@@ -43,10 +43,13 @@ with open('repoList','r') as flist:
         os.system('cd '+aiFolder+'&&python3 merge_cpg.py')
         os.system('cd '+aiFolder+'&&python3 test.py')
 
-        os.system('cp '+aiFolder+'logs/test_results.txt'+' ./result/'+datetime.date.today().strftime("%d%m%Y")+'_'+userName+'_'+repoName)
-        with open(aiFolder+'logs/test_results.txt','r') as file:
-            for i in file.readlines():
-                if i.splitlines()[0].endswith(',1'):
-                    bot_message = 'https://github.com/'+userName+'/'+repoName+'/commit/'+i.split('/')[2]
-                    send_text = 'https://api.telegram.org/bot' + bot_token + '/sendMessage?chat_id=' + bot_chatID + '&parse_mode=Markdown&text=' + bot_message
-                    response = requests.get(send_text)
+        if os.path.exists(aiFolder+'logs/test_results.txt'):
+            os.system('cp '+aiFolder+'logs/test_results.txt'+' ./result/'+datetime.date.today().strftime("%d%m%Y")+'_'+userName+'_'+repoName)
+            with open(aiFolder+'logs/test_results.txt','r') as file:
+                for i in file.readlines():
+                    if i.splitlines()[0].endswith(',1'):
+                        bot_message = 'https://github.com/'+userName+'/'+repoName+'/commit/'+i.split('/')[2]
+                        send_text = 'https://api.telegram.org/bot' + bot_token + '/sendMessage?chat_id=' + bot_chatID + '&parse_mode=Markdown&text=' + bot_message
+                        response = requests.get(send_text)
+        else:
+            os.system('echo \"'+datetime.date.today().strftime("%d%m%Y")+'_'+userName+'_'+repoName+'\" >> ./result/tmp')
