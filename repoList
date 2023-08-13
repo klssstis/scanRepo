@@ -2,3 +2,4 @@ nginx nginx
 openssl openssl
 FFmpeg FFmpeg
 irssi irssi
+postgres postgres
