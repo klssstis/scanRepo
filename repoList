@@ -3,3 +3,7 @@ openssl openssl
 FFmpeg FFmpeg
 irssi irssi
 postgres postgres
+openssh openssh-portable
+LuaJIT LuaJIT
+tradr-project tf_remapper_cpp
+FreeRADIUS freeradius-server
