@@ -34,7 +34,7 @@ with open('repoList','r') as flist:
         os.system('rm -rf '+aiFolder+'raw_patch/*')
         os.system('rm -rf '+aiFolder+'logs/test_results.txt')
         for i in commits:
-            os.system('cd '+aiFolder+'raw_patch&&wget https://github.com/'+userName+'/'+repoName+'/commit/'+i.commit.sha[:8]+'.patch -O '+i.commit.sha[:8])
+            os.system('cd '+aiFolder+'raw_patch&&wget https://github.com/'+userName+'/'+repoName+'/commit/'+i.commit.sha+'.patch -O '+i.commit.sha[:8])
             os.system('cd '+aiFolder+'&&python3 get_ab_file.py '+userName+' '+repoName+' '+i.commit.sha[:8])
             index+=1
             if index >100:
