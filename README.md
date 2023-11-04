@@ -1,5 +1,5 @@
 
-Project to search for security fixes in repositories github, using GraphSPD
+Project to search for security fixes in repositories github, using GraphSPD and PatchRNN_demo
 
 
 ```bibtex
@@ -15,4 +15,17 @@ publisher = {IEEE Computer Society},
 address = {Los Alamitos, CA, USA},
 month = {May}
 }
+```
+
+
+```bibtex
+@INPROCEEDINGS{PatchRNN2021Wang,
+  author={Wang, Xinda and Wang, Shu and Feng, Pengbin and Sun, Kun and Jajodia, Sushil and Benchaaboun, Sanae and Geck, Frank},
+  booktitle={MILCOM 2021 - 2021 IEEE Military Communications Conference (MILCOM)}, 
+  title={PatchRNN: A Deep Learning-Based System for Security Patch Identification}, 
+  year={2021},
+  volume={},
+  number={},
+  pages={595-600},
+  doi={10.1109/MILCOM52596.2021.9652940}}
 ```
