@@ -1,0 +1,43 @@
+name: start worker
+#on: push
+on:
+  schedule:
+    - cron:  '5 14 * * *'   
+jobs:
+  build:
+    runs-on: ubuntu-20.04
+    steps:
+    - uses: actions/checkout@v1
+      with:
+        ref: ${{ github.head_ref }}
+    - name: install depends
+      run: |
+          cd /home/runner/work
+          sudo apt-get update
+          sudo apt-get install -y git python3 sudo python3-pip
+          sudo rm -rf /usr/lib/python3/dist-packages/OpenSSL
+          sudo pip3 install pyopenssl
+          sudo pip3 install pyopenssl --upgrade
+          sudo pip3 install PyGithub
+          sudo pip3 install requests
+          git clone https://github.com/klssstis/GraphSPD.git
+          ls -al
+          chmod +x /home/runner/work/GraphSPD/install_dep.sh
+          chmod -R +x /home/runner/work/GraphSPD/joern
+          /home/runner/work/GraphSPD/install_dep.sh
+          sudo ln -s /usr/lib/x86_64-linux-gnu/libclang-10.so.1 /usr/lib/x86_64-linux-gnu/libclang.so
+          git clone https://github.com/klssstis/PatchRNN-demo.git
+    - name: runs
+      env:
+        COMMIT_MSG: |
+          addcommit
+          skip-checks: true
+      run: |
+          cd /home/runner/work/scanRepo/scanRepo/&&python3 worker2.py ${{ secrets.ACCESS_TOKEN }} ${{ secrets.BOT_TK }} ${{ secrets.CHAT_ID }}
+          sudo git config --global http.postBuffer 524288000
+          sudo git config --local user.email "${GITHUB_ACTOR}@gmail.com"
+          sudo git config --local user.name "${GITHUB_ACTOR}"
+          sudo git remote -v
+          sudo git add --all
+          sudo git commit -m "result works"
+          sudo git push "https://klssstis:${{ secrets.ACCESS_TOKEN }}@github.com/klssstis/scanRepo.git" HEAD:main --force 
