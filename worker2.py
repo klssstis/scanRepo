@@ -15,9 +15,9 @@ except IndexError:
     print("not all parameters")
     os._exit(0)
 
-os.chdir("./PatchRNN-demo")
-aiFolder = '/home/runner/work/GraphSPD/'
-with open('repoList','r') as flist:
+os.chdir("/home/runner/work/PatchRNN-demo")
+
+with open('/home/runner/work/scanRepo/scanRepo/repoList','r') as flist:
     for j in flist.readlines():
         userName = j.split(' ')[0]
         repoName = j.splitlines()[0].split(' ')[1]
