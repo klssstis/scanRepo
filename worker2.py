@@ -43,7 +43,7 @@ with open('/home/runner/work/scanRepo/scanRepo/repoList','r') as flist:
         os.system('python3 demo.py')
         os.system('cat ./results/results.txt')
         if os.path.exists('./results/results.txt'):
-            os.system('cp ./results/results.txt'+' /home/runner/work/scanRepo/scanRepo/results/rnn_'+datetime.date.today().strftime("%d%m%Y")+'_'+userName+'_'+repoName)
+            os.system('cp ./results/results.txt'+' /home/runner/work/scanRepo/scanRepo/result/rnn_'+datetime.date.today().strftime("%d%m%Y")+'_'+userName+'_'+repoName)
             with open('./results/results.txt','r') as file:
                 for i in file.readlines():
                     if i.splitlines()[0].endswith(',1'):
@@ -51,4 +51,4 @@ with open('/home/runner/work/scanRepo/scanRepo/repoList','r') as flist:
                         send_text = 'https://api.telegram.org/bot' + bot_token + '/sendMessage?chat_id=' + bot_chatID + '&parse_mode=Markdown&text=' + bot_message
                         response = requests.get(send_text)
         else:
-            os.system('echo \"'+datetime.date.today().strftime("%d%m%Y")+'_'+userName+'_'+repoName+'\" >> /home/runner/work/scanRepo/scanRepo/results/rnn_tmp')
+            os.system('echo \"'+datetime.date.today().strftime("%d%m%Y")+'_'+userName+'_'+repoName+'\" >> /home/runner/work/scanRepo/scanRepo/result/rnn_tmp')
