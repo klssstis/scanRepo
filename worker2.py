@@ -51,4 +51,4 @@ with open('/home/runner/work/scanRepo/scanRepo/repoList','r') as flist:
                         send_text = 'https://api.telegram.org/bot' + bot_token + '/sendMessage?chat_id=' + bot_chatID + '&parse_mode=Markdown&text=' + bot_message
                         response = requests.get(send_text)
         else:
-            os.system('echo \"'+datetime.date.today().strftime("%d%m%Y")+'_'+userName+'_'+repoName+'\" >> ./results/rnn_tmp')
+            os.system('echo \"'+datetime.date.today().strftime("%d%m%Y")+'_'+userName+'_'+repoName+'\" >> /home/runner/work/scanRepo/scanRepo/results/rnn_tmp')
