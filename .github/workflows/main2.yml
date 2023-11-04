@@ -20,6 +20,10 @@ jobs:
           sudo pip3 install pyopenssl --upgrade
           sudo pip3 install PyGithub
           sudo pip3 install requests
+          sudo pip3 install nltk==3.3
+          sudo pip3 install natsort
+          sudo pip3 install pandas
+          sudo pip3 install sklearn
           git clone https://github.com/klssstis/GraphSPD.git
           ls -al
           chmod +x /home/runner/work/GraphSPD/install_dep.sh
