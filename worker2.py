@@ -41,7 +41,7 @@ with open('/home/runner/work/scanRepo/scanRepo/repoList','r') as flist:
             if index >100:
                 break
         os.system('python3 demo.py')
-
+        os.system('cat ./results/results.txt')
         if os.path.exists('./results/results.txt'):
             os.system('cp ./results/results.txt'+' /home/runner/work/scanRepo/scanRepo/results/rnn_'+datetime.date.today().strftime("%d%m%Y")+'_'+userName+'_'+repoName)
             with open('./results/results.txt','r') as file:
