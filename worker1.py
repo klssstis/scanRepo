@@ -48,7 +48,7 @@ with open('repoList','r') as flist:
             with open(aiFolder+'logs/test_results.txt','r') as file:
                 for i in file.readlines():
                     if i.splitlines()[0].endswith(',1'):
-                        bot_message = 'https://github.com/'+userName+'/'+repoName+'/commit/'+i.split('/')[2]
+                        bot_message = 'graphSPD\nhttps://github.com/'+userName+'/'+repoName+'/commit/'+i.split('/')[2]
                         send_text = 'https://api.telegram.org/bot' + bot_token + '/sendMessage?chat_id=' + bot_chatID + '&parse_mode=Markdown&text=' + bot_message
                         response = requests.get(send_text)
         else:
