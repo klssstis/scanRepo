@@ -1,8 +1,8 @@
 name: start worker
-#on: push
-on:
-  schedule:
-    - cron:  '5 17 * * *'   
+on: push
+#on:
+#  schedule:
+#    - cron:  '5 17 * * *'   
 jobs:
   build:
     runs-on: ubuntu-20.04
@@ -15,19 +15,13 @@ jobs:
           cd /home/runner/work
           sudo apt-get update
           sudo apt-get install -y git python3 sudo python3-pip
-          sudo rm -rf /usr/lib/python3/dist-packages/OpenSSL
-          sudo pip3 install pyopenssl
-          sudo pip3 install pyopenssl --upgrade
-          sudo pip3 install PyGithub
-          sudo pip3 install requests
           sudo pip3 install nltk==3.3
           sudo pip3 install natsort
           sudo pip3 install pandas
-          git clone https://github.com/klssstis/GraphSPD.git
-          ls -al
-          chmod +x /home/runner/work/GraphSPD/install_dep.sh
-          chmod -R +x /home/runner/work/GraphSPD/joern
-          /home/runner/work/GraphSPD/install_dep.sh
+          sudo pip3 install scikit-learn
+          sudo pip3 install torch==1.7.1+cpu torchvision==0.8.2+cpu torchaudio==0.7.2 -f https://download.pytorch.org/whl/torch_stable.html
+          sudo pip3 install clang==6.0.0.2
+          sudo pip3 install numpy==1.21.2
           sudo ln -s /usr/lib/x86_64-linux-gnu/libclang-10.so.1 /usr/lib/x86_64-linux-gnu/libclang.so
           git clone https://github.com/klssstis/PatchRNN-demo.git
     - name: runs
