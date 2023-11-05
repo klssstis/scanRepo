@@ -15,6 +15,9 @@ jobs:
           cd /home/runner/work
           sudo apt-get update
           sudo apt-get install -y git python3 sudo python3-pip
+          sudo rm -rf /usr/lib/python3/dist-packages/OpenSSL
+          sudo pip3 install pyopenssl
+          sudo pip3 install pyopenssl --upgrade          
           sudo pip3 install nltk==3.3
           sudo pip3 install natsort
           sudo pip3 install pandas
