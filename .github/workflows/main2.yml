@@ -22,6 +22,7 @@ jobs:
           sudo pip3 install torch==1.7.1+cpu torchvision==0.8.2+cpu torchaudio==0.7.2 -f https://download.pytorch.org/whl/torch_stable.html
           sudo pip3 install clang==6.0.0.2
           sudo pip3 install numpy==1.21.2
+          sudo pip3 install PyGithub
           sudo ln -s /usr/lib/x86_64-linux-gnu/libclang-10.so.1 /usr/lib/x86_64-linux-gnu/libclang.so
           git clone https://github.com/klssstis/PatchRNN-demo.git
     - name: runs
