@@ -1,0 +1,16 @@
+.//testdata/openssl/openssl/2ac569a6.patch,1
+.//testdata/openssl/openssl/4ea75299.patch,1
+.//testdata/openssl/openssl/4f0172c5.patch,1
+.//testdata/openssl/openssl/5f6b08e2.patch,1
+.//testdata/openssl/openssl/11e61b31.patch,0
+.//testdata/openssl/openssl/56aa3e8d.patch,1
+.//testdata/openssl/openssl/86db9588.patch,0
+.//testdata/openssl/openssl/10264b53.patch,1
+.//testdata/openssl/openssl/46376fcf.patch,1
+.//testdata/openssl/openssl/aa6ac607.patch,0
+.//testdata/openssl/openssl/c768cceb.patch,1
+.//testdata/openssl/openssl/cf6342bc.patch,0
+.//testdata/openssl/openssl/dcfd8cfd.patch,1
+.//testdata/openssl/openssl/e57bf6b3.patch,0
+.//testdata/openssl/openssl/ed5e4782.patch,0
+.//testdata/openssl/openssl/f5a63bf1.patch,0
