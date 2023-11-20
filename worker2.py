@@ -38,7 +38,7 @@ with open('/home/runner/work/scanRepo/scanRepo/repoList','r') as flist:
         for i in commits:
             os.system('cd ./testdata/'+userName+'/'+repoName+'&& wget https://github.com/'+userName+'/'+repoName+'/commit/'+i.commit.sha+'.patch -O '+i.commit.sha[:8]+'.patch')
             index+=1
-            if index >100:
+            if index >10:
                 break
         os.system('python3 demo.py')
         os.system('cat ./results/results.txt')
