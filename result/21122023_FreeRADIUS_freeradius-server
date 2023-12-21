@@ -1,0 +1,17 @@
+filename,prediction
+./testdata/a65b112a/out_slim_ninf_noast_n1_w.log,0
+./testdata/534284b3/out_slim_ninf_noast_n1_w.log,0
+./testdata/b4f8f961/out_slim_ninf_noast_n1_w.log,1
+./testdata/fa15bc5a/out_slim_ninf_noast_n1_w.log,0
+./testdata/b718cc66/out_slim_ninf_noast_n1_w.log,0
+./testdata/bd58fb38/out_slim_ninf_noast_n1_w.log,0
+./testdata/f1f7f31b/out_slim_ninf_noast_n1_w.log,0
+./testdata/2ffef7c2/out_slim_ninf_noast_n1_w.log,0
+./testdata/e581df62/out_slim_ninf_noast_n1_w.log,0
+./testdata/9b0e6486/out_slim_ninf_noast_n1_w.log,0
+./testdata/dc6006f4/out_slim_ninf_noast_n1_w.log,0
+./testdata/7c8c3a4d/out_slim_ninf_noast_n1_w.log,0
+./testdata/c2ebb96e/out_slim_ninf_noast_n1_w.log,0
+./testdata/18220936/out_slim_ninf_noast_n1_w.log,0
+./testdata/cf0d15f2/out_slim_ninf_noast_n1_w.log,0
+./testdata/48ffecfb/out_slim_ninf_noast_n1_w.log,0
