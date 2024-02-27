@@ -1,0 +1,7 @@
+.//testdata/postgres/postgres/5fe08c00.patch,0
+.//testdata/postgres/postgres/17a3f79f.patch,0
+.//testdata/postgres/postgres/42a1de30.patch,0
+.//testdata/postgres/postgres/92d2ab75.patch,1
+.//testdata/postgres/postgres/743112a2.patch,1
+.//testdata/postgres/postgres/e1724af4.patch,1
+.//testdata/postgres/postgres/ef5e2e90.patch,1
