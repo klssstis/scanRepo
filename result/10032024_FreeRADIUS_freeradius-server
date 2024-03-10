@@ -1,0 +1,5 @@
+filename,prediction
+./testdata/dc57480d/out_slim_ninf_noast_n1_w.log,0
+./testdata/0dfe81f1/out_slim_ninf_noast_n1_w.log,0
+./testdata/4451ca3b/out_slim_ninf_noast_n1_w.log,0
+./testdata/8315a20a/out_slim_ninf_noast_n1_w.log,0
