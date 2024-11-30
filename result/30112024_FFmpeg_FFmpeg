@@ -1,0 +1,10 @@
+filename,prediction
+./testdata/8d6f3bcb/out_slim_ninf_noast_n1_w.log,0
+./testdata/06247ae7/out_slim_ninf_noast_n1_w.log,0
+./testdata/4de67e87/out_slim_ninf_noast_n1_w.log,0
+./testdata/98698ed3/out_slim_ninf_noast_n1_w.log,0
+./testdata/46006529/out_slim_ninf_noast_n1_w.log,0
+./testdata/eb67e60c/out_slim_ninf_noast_n1_w.log,1
+./testdata/e06515b0/out_slim_ninf_noast_n1_w.log,0
+./testdata/5c5a08ec/out_slim_ninf_noast_n1_w.log,0
+./testdata/ba89c5b9/out_slim_ninf_noast_n1_w.log,0
