@@ -1,0 +1,10 @@
+.//testdata/openssl/openssl/1a81d509.patch,0
+.//testdata/openssl/openssl/6d8e516e.patch,1
+.//testdata/openssl/openssl/7bf52a6f.patch,0
+.//testdata/openssl/openssl/7f6cc862.patch,0
+.//testdata/openssl/openssl/8f06efe2.patch,1
+.//testdata/openssl/openssl/24f32f14.patch,0
+.//testdata/openssl/openssl/28de1f50.patch,1
+.//testdata/openssl/openssl/44af96b9.patch,1
+.//testdata/openssl/openssl/03541d73.patch,1
+.//testdata/openssl/openssl/86408fa8.patch,0
